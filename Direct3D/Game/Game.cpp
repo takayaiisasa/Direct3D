@@ -435,20 +435,10 @@ int Game::Run()
 		// ライト
 		matricesPerFrame.lightPosition = DirectX::XMFLOAT4(1.0f, 2.0f, -2.0f, 1.0f);
 		// マテリアル
-		if (GetAsyncKeyState('D')) {
-			//matricesPerFrame.materialDiffuse = DirectX::XMFLOAT4(1, 1, 0, 1);
 			matricesPerFrame.materialDiffuse = DirectX::XMFLOAT4(1, 1, 1, 1);
-		}
-		else {
-			matricesPerFrame.materialDiffuse = DirectX::XMFLOAT4(0, 0, 0, 1);
-		}
-		if (GetAsyncKeyState('S')) {
 			matricesPerFrame.materialSpecularColor = DirectX::XMFLOAT3(1, 1, 1);
 			matricesPerFrame.materialSpecularPower = 0.1f;
-		}
-		else {
-			matricesPerFrame.materialSpecularColor = DirectX::XMFLOAT3(0, 0, 0);
-		}
+
 		// 定数バッファーを更新
 		constantBuffer->SetData(&matricesPerFrame);
 
